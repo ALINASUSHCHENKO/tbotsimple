@@ -7,7 +7,6 @@ from dotenv import load_dotenv
 import telebot
 import logging
 
-# Настройка логирования
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -18,22 +17,18 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Загрузка переменных окружения
 load_dotenv()
 
 TOKEN = os.getenv("BOT_TOKEN")
 if not TOKEN:
     raise RuntimeError("BOT_TOKEN не найден в .env файле")
 
-# Глобальные переменные
 subscribed_users = set()
 
-# Добавляем тестовое время +2 минуты от текущего времени для проверки
 test_time = (datetime.now() + timedelta(minutes=2)).strftime("%H:%M")
 WATER_REMINDER_TIMES = ["09:00", "13:00", "15:00", "17:00", "23:00", test_time]
 WATER_REMINDER_MESSAGE = "💧 Время пить воду! Не забудьте выпить стакан воды для поддержания водного баланса."
 
-# Создание бота
 bot = telebot.TeleBot(TOKEN)
 logger.info("Бот инициализирован")
 
@@ -44,13 +39,11 @@ class WaterReminderScheduler:
         self.setup_schedule()
     
     def setup_schedule(self):
-        """Настройка расписания напоминаний"""
         for reminder_time in WATER_REMINDER_TIMES:
             schedule.every().day.at(reminder_time).do(self.send_water_reminder)
             logger.info(f"Напоминание настроено на {reminder_time}")
     
     def send_water_reminder(self):
-        """Отправка напоминаний всем подписанным пользователям"""
         if not subscribed_users:
             logger.info("Нет подписанных пользователей для отправки напоминания")
             return
@@ -70,7 +63,6 @@ class WaterReminderScheduler:
             except Exception as e:
                 error_count += 1
                 logger.error(f"Ошибка отправки пользователю {chat_id}: {e}")
-                # Не удаляем сразу, возможно временная ошибка
                 
         logger.info(f"Напоминания отправлены: {success_count} успешно, {error_count} с ошибками")
     
@@ -88,7 +80,6 @@ class WaterReminderScheduler:
             if reminder_time > current_time:
                 return reminder_time
         
-        # Если все напоминания сегодня прошли, берем первое завтра
         return datetime.strptime(WATER_REMINDER_TIMES[0], "%H:%M").replace(
             year=current_time.year,
             month=current_time.month,
@@ -98,10 +89,10 @@ class WaterReminderScheduler:
     def run(self):
         """Запуск планировщика в отдельном потоке"""
         logger.info("Планировщик напоминаний запущен")
-        print("🕐 Планировщик запущен. Ожидайте напоминаний...")
+        print("Планировщик запущен. Ожидайте напоминаний...")
         while True:
             schedule.run_pending()
-            time.sleep(30)  # Проверяем каждые 30 секунд
+            time.sleep(30)
 
 
 scheduler = WaterReminderScheduler(bot)
@@ -132,10 +123,10 @@ def send_welcome(message):
 def subscribe_user(message):
     chat_id = message.chat.id
     if chat_id in subscribed_users:
-        bot.reply_to(message, "✅ Вы уже подписаны на напоминания о воде!")
+        bot.reply_to(message, "Вы уже подписаны на напоминания о воде!")
     else:
         subscribed_users.add(chat_id)
-        bot.reply_to(message, "✅ Вы успешно подписались на напоминания о воде! Я буду напоминать вам в 9, 13, 15, 17 и 23 часа.")
+        bot.reply_to(message, "Вы успешно подписались на напоминания о воде! Я буду напоминать вам в 9, 13, 15, 17 и 23 часа.")
         logger.info(f"Пользователь {chat_id} подписался на напоминания")
 
 
@@ -144,7 +135,7 @@ def unsubscribe_user(message):
     chat_id = message.chat.id
     if chat_id in subscribed_users:
         subscribed_users.remove(chat_id)
-        bot.reply_to(message, "❌ Вы отписались от напоминаний о воде.")
+        bot.reply_to(message, "Вы отписались от напоминаний о воде.")
         logger.info(f"Пользователь {chat_id} отписался от напоминаний")
     else:
         bot.reply_to(message, "ℹ️ Вы не были подписаны на напоминания.")
@@ -154,14 +145,13 @@ def unsubscribe_user(message):
 def check_status(message):
     chat_id = message.chat.id
     if chat_id in subscribed_users:
-        bot.reply_to(message, "✅ Вы подписаны на напоминания о воде.")
+        bot.reply_to(message, "Вы подписаны на напоминания о воде.")
     else:
-        bot.reply_to(message, "❌ Вы не подписаны на напоминания о воде. Используйте /subscribe для подписки.")
+        bot.reply_to(message, "Вы не подписаны на напоминания о воде. Используйте /subscribe для подписки.")
 
 
 @bot.message_handler(commands=['next'])
 def next_reminder(message):
-    """Показывает время следующего напоминания"""
     next_time = scheduler.get_next_reminder_time()
     current_time = datetime.now()
     time_until = next_time - current_time
@@ -169,14 +159,13 @@ def next_reminder(message):
     hours = int(time_until.total_seconds() // 3600)
     minutes = int((time_until.total_seconds() % 3600) // 60)
     
-    response = f"⏰ Следующее напоминание через {hours}ч {minutes}м в {next_time.strftime('%H:%M')}"
+    response = f"Следующее напоминание через {hours}ч {minutes}м в {next_time.strftime('%H:%M')}"
     bot.reply_to(message, response)
 
 
 @bot.message_handler(commands=['schedule'])
 def show_schedule(message):
-    """Показывает полное расписание напоминаний"""
-    schedule_text = "📅 Расписание напоминаний:\n\n"
+    schedule_text = "Расписание напоминаний:\n\n"
     for time_str in WATER_REMINDER_TIMES:
         if time_str.startswith("09:") or time_str.startswith("13:") or time_str.startswith("15:") or time_str.startswith("17:") or time_str.startswith("23:"):
             schedule_text += f"• {time_str}\n"
@@ -189,40 +178,38 @@ def show_schedule(message):
 
 @bot.message_handler(commands=['test'])
 def test_reminder(message):
-    """Тестовая команда для проверки напоминания"""
     scheduler.send_water_reminder()
-    bot.reply_to(message, "✅ Тестовое напоминание отправлено всем подписанным пользователям!")
+    bot.reply_to(message, "Тестовое напоминание отправлено всем подписанным пользователям!")
 
 
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
-    """Обработка любых других сообщений"""
-    bot.reply_to(message, "🤔 Не понимаю ваше сообщение. Используйте /help для просмотра доступных команд.")
+
+    bot.reply_to(message, "Ни слова не понимаю.. Используйте /help для просмотра доступных команд.")
 
 
 if __name__ == "__main__":
     try:
         logger.info("=== ЗАПУСК БОТА ===")
         
-        # Проверяем подключение к боту
+
         bot_info = bot.get_me()
         logger.info(f"Бот: {bot_info.first_name} (@{bot_info.username})")
         
         print("=" * 50)
-        print("🤖 БОТ ЗАПУЩЕН!")
+        print("БОТ ЗАПУЩЕН!")
         print("=" * 50)
         print(f"Бот: {bot_info.first_name} (@{bot_info.username})")
-        print("📋 Доступные команды:")
+        print("Доступные команды:")
         print("  /start - начать работу")
         print("  /subscribe - подписаться на напоминания")
         print("  /test - тестовое напоминание")
         print("  /schedule - показать расписание")
-        print("⏰ Тестовое напоминание через 2 минуты")
-        print("📝 Логи сохраняются в bot.log")
-        print("⏸️  Нажмите Ctrl+C для остановки")
+        print("Тестовое напоминание через 2 минуты")
+        print("Логи сохраняются в bot.log")
+        print("⏸Нажмите Ctrl+C для остановки")
         print("=" * 50)
         
-        # Запускаем бота
         bot.infinity_polling(skip_pending=True, timeout=20)
         
     except Exception as e:
