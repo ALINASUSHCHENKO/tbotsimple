@@ -33,3 +33,365 @@
 2025-10-04 23:00:19,103 - __main__ - INFO - Нет подписанных пользователей для отправки напоминания
 2025-10-04 23:16:31,458 - TeleBot - ERROR - Infinity polling: polling exited
 2025-10-04 23:16:31,458 - TeleBot - ERROR - Break infinity polling
+2025-10-05 13:57:50,164 - __main__ - INFO - Бот инициализирован
+2025-10-05 13:57:50,165 - __main__ - INFO - Напоминание настроено на 09:00
+2025-10-05 13:57:50,165 - __main__ - INFO - Напоминание настроено на 13:00
+2025-10-05 13:57:50,165 - __main__ - INFO - Напоминание настроено на 15:00
+2025-10-05 13:57:50,165 - __main__ - INFO - Напоминание настроено на 17:00
+2025-10-05 13:57:50,165 - __main__ - INFO - Напоминание настроено на 23:00
+2025-10-05 13:57:50,165 - __main__ - INFO - Напоминание настроено на 13:59
+2025-10-05 13:57:50,166 - __main__ - INFO - Планировщик напоминаний запущен
+2025-10-05 13:57:50,166 - __main__ - INFO - === ЗАПУСК БОТА ===
+2025-10-05 13:57:50,548 - __main__ - INFO - Бот: Пей (@drinkkwatbot)
+2025-10-05 13:57:51,349 - __main__ - INFO - Пользователь 6431693552 вызвал /start
+2025-10-05 13:58:36,399 - __main__ - INFO - Пользователь 991748762 вызвал /start
+2025-10-05 13:58:42,666 - __main__ - INFO - Пользователь 991748762 подписался на напоминания
+2025-10-05 13:58:50,273 - __main__ - INFO - Пользователь 991748762 вызвал /start
+2025-10-05 13:58:54,893 - __main__ - INFO - Отправка напоминаний в 13:58 для 1 пользователей
+2025-10-05 13:58:54,965 - __main__ - INFO - Напоминание отправлено пользователю 991748762
+2025-10-05 13:58:54,965 - __main__ - INFO - Напоминания отправлены: 1 успешно, 0 с ошибками
+2025-10-05 13:59:20,167 - __main__ - INFO - Отправка напоминаний в 13:59 для 1 пользователей
+2025-10-05 13:59:20,518 - __main__ - INFO - Напоминание отправлено пользователю 991748762
+2025-10-05 13:59:20,519 - __main__ - INFO - Напоминания отправлены: 1 успешно, 0 с ошибками
+2025-10-05 14:00:01,835 - __main__ - INFO - Пользователь 435736620 вызвал /start
+2025-10-05 14:00:06,452 - __main__ - INFO - Пользователь 435736620 подписался на напоминания
+2025-10-05 14:00:08,705 - __main__ - INFO - Пользователь 435736620 вызвал /start
+2025-10-05 14:03:33,464 - __main__ - INFO - Пользователь 434410883 вызвал /start
+2025-10-05 14:03:47,926 - __main__ - INFO - Пользователь 434410883 подписался на напоминания
+2025-10-05 14:06:37,097 - __main__ - INFO - Пользователь 249537970 вызвал /start
+2025-10-05 14:06:56,154 - TeleBot - ERROR - Infinity polling exception: ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))
+2025-10-05 14:06:56,160 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connection.py", line 565, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 1430, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\util\retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connection.py", line 565, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 1430, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 logger_level=logger_level, allowed_updates=allowed_updates, restart_on_change=False,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                            logger_level=logger_level, allowed_updates=allowed_updates)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 154, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 10134, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "C:\tbot\telegram-bot-project\main.py", line 188, in echo_all
+    bot.reply_to(message, "Ни слова не понимаю.. Используйте /help для просмотра доступных команд.")
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 6347, in reply_to
+    return self.send_message(message.chat.id, text, reply_parameters=reply_parameters, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1811, in send_message
+    apihelper.send_message(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        self.token, chat_id, text,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        suggested_post_parameters=suggested_post_parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 282, in send_message
+    return _make_request(token, method_url, params=payload, method='post')
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    result = _get_req_session().request(
+        method, request_url, params=params, files=files,
+        timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\adapters.py", line 659, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))
+
+2025-10-05 14:07:17,750 - __main__ - INFO - Пользователь 249537970 вызвал /start
+2025-10-05 14:07:21,745 - __main__ - INFO - Пользователь 249537970 подписался на напоминания
+2025-10-05 14:07:34,420 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-05 14:07:34,421 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-10-05 14:08:07,729 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-05 14:08:07,730 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-10-05 14:08:49,860 - __main__ - INFO - Отправка напоминаний в 14:08 для 4 пользователей
+2025-10-05 14:08:49,935 - __main__ - INFO - Напоминание отправлено пользователю 249537970
+2025-10-05 14:08:50,013 - __main__ - INFO - Напоминание отправлено пользователю 991748762
+2025-10-05 14:08:50,094 - __main__ - INFO - Напоминание отправлено пользователю 434410883
+2025-10-05 14:08:50,175 - __main__ - INFO - Напоминание отправлено пользователю 435736620
+2025-10-05 14:08:50,175 - __main__ - INFO - Напоминания отправлены: 4 успешно, 0 с ошибками
+2025-10-05 14:09:56,989 - __main__ - INFO - Пользователь 6431693552 вызвал /start
+2025-10-05 14:10:02,620 - __main__ - INFO - Пользователь 6431693552 подписался на напоминания
+2025-10-05 15:00:12,749 - __main__ - INFO - Отправка напоминаний в 15:00 для 5 пользователей
+2025-10-05 15:00:13,164 - __main__ - INFO - Напоминание отправлено пользователю 6431693552
+2025-10-05 15:00:13,252 - __main__ - INFO - Напоминание отправлено пользователю 249537970
+2025-10-05 15:00:13,327 - __main__ - INFO - Напоминание отправлено пользователю 434410883
+2025-10-05 15:00:13,432 - __main__ - INFO - Напоминание отправлено пользователю 991748762
+2025-10-05 15:00:13,541 - __main__ - INFO - Напоминание отправлено пользователю 435736620
+2025-10-05 15:00:13,542 - __main__ - INFO - Напоминания отправлены: 5 успешно, 0 с ошибками
+2025-10-05 15:01:40,318 - TeleBot - ERROR - Infinity polling: polling exited
+2025-10-05 15:01:40,318 - TeleBot - ERROR - Break infinity polling
+2025-10-05 15:15:28,356 - __main__ - INFO - Бот инициализирован
+2025-10-05 15:15:28,357 - __main__ - INFO - Напоминание настроено на 09:00
+2025-10-05 15:15:28,357 - __main__ - INFO - Напоминание настроено на 13:00
+2025-10-05 15:15:28,357 - __main__ - INFO - Напоминание настроено на 15:00
+2025-10-05 15:15:28,357 - __main__ - INFO - Напоминание настроено на 17:00
+2025-10-05 15:15:28,357 - __main__ - INFO - Напоминание настроено на 23:00
+2025-10-05 15:15:28,357 - __main__ - INFO - Напоминание настроено на 15:17
+2025-10-05 15:15:28,357 - __main__ - INFO - Планировщик напоминаний запущен
+2025-10-05 15:15:28,358 - __main__ - INFO - ЗАПУСК БОТА
+2025-10-05 15:15:28,722 - __main__ - INFO - Бот: Пей (@drinkkwatbot)
+2025-10-05 15:15:29,518 - __main__ - INFO - Пользователь 6431693552 подписался на напоминания
+2025-10-05 15:15:50,923 - __main__ - INFO - Пользователь 991748762 вызвал /start
+2025-10-05 15:16:00,024 - __main__ - INFO - Пользователь 991748762 вызвал /start
+2025-10-05 15:16:19,753 - __main__ - INFO - Ping от 991748762: 89.01 мс (API: 55.02 мс)
+2025-10-05 15:16:40,664 - TeleBot - ERROR - Infinity polling: polling exited
+2025-10-05 15:16:40,664 - TeleBot - ERROR - Break infinity polling
+2025-10-05 15:18:39,263 - __main__ - INFO - Бот инициализирован
+2025-10-05 15:18:39,264 - __main__ - INFO - Напоминание настроено на 09:00
+2025-10-05 15:18:39,264 - __main__ - INFO - Напоминание настроено на 13:00
+2025-10-05 15:18:39,264 - __main__ - INFO - Напоминание настроено на 15:00
+2025-10-05 15:18:39,264 - __main__ - INFO - Напоминание настроено на 17:00
+2025-10-05 15:18:39,264 - __main__ - INFO - Напоминание настроено на 23:00
+2025-10-05 15:18:39,264 - __main__ - INFO - Напоминание настроено на 15:20
+2025-10-05 15:18:39,264 - __main__ - INFO - Планировщик напоминаний запущен
+2025-10-05 15:18:39,265 - __main__ - INFO - ЗАПУСК БОТА
+2025-10-05 15:18:39,599 - __main__ - INFO - Бот: Пей (@drinkkwatbot)
+2025-10-05 15:18:40,391 - __main__ - INFO - Пользователь 6431693552 подписался на напоминания
+2025-10-05 15:18:59,502 - __main__ - INFO - Пользователь 6431693552 нашел максимум: [2, 3, -5] = 3
+2025-10-05 15:19:06,832 - __main__ - INFO - Пользователь 6431693552 нашел максимум: [2] = 2
+2025-10-05 15:19:22,966 - __main__ - INFO - Пользователь 6431693552 нашел максимум: [2, 3] = 3
+2025-10-05 15:19:36,241 - __main__ - INFO - Пользователь 6431693552 вызвал /start
+2025-10-05 15:19:41,232 - __main__ - INFO - Пользователь 6431693552 запросил /about
+2025-10-05 15:20:01,669 - __main__ - INFO - Ping от 6431693552: 82.88 мс (API: 48.03 мс)
+2025-10-05 15:20:09,273 - __main__ - INFO - Отправка напоминаний в 15:20 для 1 пользователей
+2025-10-05 15:20:09,664 - __main__ - INFO - Напоминание отправлено пользователю 6431693552
+2025-10-05 15:20:09,664 - __main__ - INFO - Напоминания отправлены: 1 успешно, 0 с ошибками
+2025-10-05 15:20:31,961 - __main__ - INFO - Отправка напоминаний в 15:20 для 1 пользователей
+2025-10-05 15:20:32,042 - __main__ - INFO - Напоминание отправлено пользователю 6431693552
+2025-10-05 15:20:32,042 - __main__ - INFO - Напоминания отправлены: 1 успешно, 0 с ошибками
+2025-10-05 15:20:58,890 - __main__ - INFO - Пользователь 6431693552 запросил /about
+2025-10-05 15:20:59,053 - __main__ - INFO - Пользователь 6431693552 запросил /about
+2025-10-05 15:20:59,282 - __main__ - INFO - Пользователь 6431693552 запросил /about
+2025-10-05 15:20:59,393 - __main__ - INFO - Пользователь 6431693552 запросил /about
+2025-10-05 15:20:59,597 - __main__ - INFO - Пользователь 6431693552 запросил /about
+2025-10-05 15:20:59,830 - __main__ - INFO - Пользователь 6431693552 запросил /about
+2025-10-05 15:20:59,942 - __main__ - INFO - Пользователь 6431693552 запросил /about
+2025-10-05 15:21:02,584 - __main__ - INFO - Пользователь 6431693552 вызвал /start
+2025-10-05 15:21:03,220 - __main__ - INFO - Ping от 6431693552: 78.28 мс (API: 46.01 мс)
+2025-10-05 15:21:07,622 - TeleBot - ERROR - Infinity polling: polling exited
+2025-10-05 15:21:07,622 - TeleBot - ERROR - Break infinity polling
+2025-10-05 15:24:40,396 - __main__ - INFO - Бот инициализирован
+2025-10-05 15:24:40,396 - __main__ - INFO - Напоминание настроено на 09:00
+2025-10-05 15:24:40,396 - __main__ - INFO - Напоминание настроено на 13:00
+2025-10-05 15:24:40,397 - __main__ - INFO - Напоминание настроено на 15:00
+2025-10-05 15:24:40,397 - __main__ - INFO - Напоминание настроено на 17:00
+2025-10-05 15:24:40,397 - __main__ - INFO - Напоминание настроено на 23:00
+2025-10-05 15:24:40,397 - __main__ - INFO - Напоминание настроено на 15:26
+2025-10-05 15:24:40,397 - __main__ - INFO - Планировщик напоминаний запущен
+2025-10-05 15:24:40,397 - __main__ - INFO - ЗАПУСК БОТА
+2025-10-05 15:24:40,780 - __main__ - INFO - Бот: Пей (@drinkkwatbot)
+2025-10-05 15:24:41,224 - __main__ - INFO - Нет подписанных пользователей для отправки напоминания
+2025-10-05 15:24:41,603 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: message to be replied not found
+2025-10-05 15:24:41,604 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 154, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 10134, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "C:\tbot\telegram-bot-project\main.py", line 306, in test_reminder
+    bot.reply_to(message, "Тестовое напоминание отправлено всем подписанным пользователям!")
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 6347, in reply_to
+    return self.send_message(message.chat.id, text, reply_parameters=reply_parameters, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1811, in send_message
+    apihelper.send_message(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        self.token, chat_id, text,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        suggested_post_parameters=suggested_post_parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 282, in send_message
+    return _make_request(token, method_url, params=payload, method='post')
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: message to be replied not found
+
+2025-10-05 15:24:57,957 - __main__ - INFO - Пользователь 991748762 вызвал /start
+2025-10-05 15:25:04,118 - __main__ - INFO - Пользователь 991748762 вызвал /start
+2025-10-05 15:25:08,732 - __main__ - INFO - Ping от 991748762: 405.0 мс (API: 60.06 мс)
+2025-10-05 15:25:16,042 - __main__ - INFO - Пользователь 991748762 подписался на напоминания
+2025-10-05 15:25:30,311 - __main__ - INFO - Отправка напоминаний в 15:25 для 1 пользователей
+2025-10-05 15:25:30,476 - __main__ - INFO - Напоминание отправлено пользователю 991748762
+2025-10-05 15:25:30,476 - __main__ - INFO - Напоминания отправлены: 1 успешно, 0 с ошибками
+2025-10-05 15:26:04,888 - __main__ - INFO - Пользователь 991748762 запросил подтверждение
+2025-10-05 15:26:07,382 - __main__ - INFO - Пользователь 991748762 выбрал: yes
+2025-10-05 15:26:10,399 - __main__ - INFO - Отправка напоминаний в 15:26 для 1 пользователей
+2025-10-05 15:26:10,741 - __main__ - INFO - Пользователь 991748762 запросил подтверждение
+2025-10-05 15:26:10,794 - __main__ - INFO - Напоминание отправлено пользователю 991748762
+2025-10-05 15:26:10,794 - __main__ - INFO - Напоминания отправлены: 1 успешно, 0 с ошибками
+2025-10-05 15:26:16,437 - __main__ - INFO - Пользователь 991748762 выбрал: later
+2025-10-05 15:26:21,957 - __main__ - INFO - Пользователь 991748762 запросил подтверждение
+2025-10-05 15:26:23,215 - __main__ - INFO - Пользователь 991748762 выбрал: unsure
+2025-10-05 15:26:44,683 - __main__ - INFO - Пользователь 6431693552 подписался на напоминания
+2025-10-05 15:26:49,194 - __main__ - INFO - Отправка напоминаний в 15:26 для 2 пользователей
+2025-10-05 15:26:49,329 - __main__ - INFO - Напоминание отправлено пользователю 6431693552
+2025-10-05 15:26:49,492 - __main__ - INFO - Напоминание отправлено пользователю 991748762
+2025-10-05 15:26:49,492 - __main__ - INFO - Напоминания отправлены: 2 успешно, 0 с ошибками
+2025-10-05 15:26:58,791 - __main__ - INFO - Отправка напоминаний в 15:26 для 2 пользователей
+2025-10-05 15:26:58,866 - __main__ - INFO - Напоминание отправлено пользователю 6431693552
+2025-10-05 15:26:58,942 - __main__ - INFO - Напоминание отправлено пользователю 991748762
+2025-10-05 15:26:58,942 - __main__ - INFO - Напоминания отправлены: 2 успешно, 0 с ошибками
+2025-10-05 15:27:24,842 - TeleBot - ERROR - Infinity polling: polling exited
+2025-10-05 15:27:24,843 - TeleBot - ERROR - Break infinity polling
