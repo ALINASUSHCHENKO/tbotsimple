@@ -44,6 +44,7 @@ class WaterReminderScheduler:
         self.setup_schedule()
 
     def setup_schedule(self):
+
         for reminder_time in WATER_REMINDER_TIMES:
             schedule.every().day.at(reminder_time).do(self.send_water_reminder)
             logger.info(f"Напоминание настроено на {reminder_time}")
@@ -72,6 +73,7 @@ class WaterReminderScheduler:
         logger.info(f"Напоминания отправлены: {success_count} успешно, {error_count} с ошибками")
 
     def get_next_reminder_time(self):
+        """Возвращает время следующего напоминания"""
         current_time = datetime.now()
 
         for time_str in WATER_REMINDER_TIMES:
@@ -98,11 +100,24 @@ class WaterReminderScheduler:
             time.sleep(30)
 
 
+def parse_ints_from_text(text: str) -> list[int]:
+    text = text.replace(",", " ")
+
+    tokens = [t for t in text.split() if not t.startswith("/")]
+
+    result = []
+    for t in tokens:
+        cleaned_token = t.strip().lstrip("-")
+        if cleaned_token.isdigit():
+            result.append(int(t))
+    return result
+
+
 def make_main_keyboard():
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    keyboard.row("/about", "/ping")
+    keyboard.row("/about", "/sum")
     keyboard.row("/hide", "/show")
-    keyboard.row("/help", "/confirm")
+    keyboard.row("/help", "/ping")
     return keyboard
 
 
@@ -138,6 +153,8 @@ def send_welcome(message):
         "/status - статус подписки\n"
         "/next - следующее напоминание\n"
         "/schedule - расписание\n"
+        "/sum - сумма чисел\n"
+        "/max - максимум чисел\n"
         "/confirm - подтверждение действия\n"
         "/test - тестовое напоминание\n"
         "/hide - скрыть клавиатуру\n"
@@ -149,6 +166,7 @@ def send_welcome(message):
 
 @bot.message_handler(commands=['about'])
 def about_bot(message):
+    """Информация о боте"""
     about_text = (
         "Информация о боте:\n\n"
         f"Автор: {BOT_AUTHOR}\n"
@@ -209,6 +227,32 @@ def ping_bot(message):
         else:
             bot.reply_to(message, error_msg)
         logger.error(f"Ошибка пинга от {message.from_user.id}: {e}")
+
+
+@bot.message_handler(commands=['sum'])
+def sum_numbers(message):
+    numbers = parse_ints_from_text(message.text)
+
+    if not numbers:
+        bot.reply_to(message, "Не найдено чисел для сложения.\nПример: /sum 2 3 10 или /sum 2, 3, -5")
+        return
+
+    total = sum(numbers)
+    bot.reply_to(message, f"Сумма чисел {numbers} = {total}")
+    logger.info(f"Пользователь {message.from_user.id} вычислил сумму: {numbers} = {total}")
+
+
+@bot.message_handler(commands=['max'])
+def max_number(message):
+    numbers = parse_ints_from_text(message.text)
+
+    if not numbers:
+        bot.reply_to(message, "Не найдено чисел для поиска максимума.\nПример: /max 2 3 10 или /max 2, 3, -5")
+        return
+
+    maximum = max(numbers)
+    bot.reply_to(message, f"Максимум чисел {numbers} = {maximum}")
+    logger.info(f"Пользователь {message.from_user.id} нашел максимум: {numbers} = {maximum}")
 
 
 @bot.message_handler(commands=['confirm'])
@@ -342,11 +386,11 @@ if __name__ == "__main__":
         print("=" * 50)
         print(f"Бот: {bot_info.first_name} (@{bot_info.username})")
         print(f"Версия: {BOT_VERSION}")
-        print("Доступные команды:")
+        print("Новые команды:")
         print("  /about - информация о боте")
-        print("  /ping - проверка пинга")
+        print("  /ping - проверка работы")
+        print("  /max - найти максимум чисел")
         print("  /confirm - подтверждение с кнопками")
-        print("  /subscribe - подписка на напоминания")
         print("Тестовое напоминание через 2 минуты")
         print("Логи сохраняются в bot.log")
         print("Ctrl+C для остановки")
